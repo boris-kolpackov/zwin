@@ -1,0 +1,10 @@
+libs =
+#import libs += libadwaita%lib{adwaita-1}
+#import libs += zlib%lib{z}
+#import libs += libpng%lib{png}
+#import libs += gtk4%lib{gtk-4}
+import libs += pangowin32%lib{pangowin32-1.0}
+
+exe{zwin}: {hxx ixx txx cxx}{**} $libs testscript
+
+cxx.poptions =+ "-I$out_root" "-I$src_root"
